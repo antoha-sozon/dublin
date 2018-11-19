@@ -1,17 +1,27 @@
+html {
+	font-size: $base-font-size;
+}
+
 body {
- 	font-family: $main-font-family; 
-	line-height: 1.5;
-	font-size: $link-font-size;
+ 	font-family: $base-font-family; 
+	line-height: $base-line-height;
+	font-size: 1.2rem;
+	color: $base-color;
 }
 
 a { 
-	color: $link-color;
+	color: $base-link-color;
 	text-decoration: none;  
+
+	&:hover {
+		color: $base-link-hover-color;
+	}
 }
 
-#wrapper {
+#wrapper { 
 	position: relative;
-	width: 100%;
+	vertical-align: top;
+	width: 100%; 
 	overflow: hidden;
 }
 
@@ -19,4 +29,27 @@ a {
 	max-width: $conteiner-width;
 	padding: 0 15px;
 	margin: 0 auto;
+}  
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -#{$grid-gutter-width / 2};
+}
+
+.col {
+  padding: 0 #{$grid-gutter-width / 2};
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 100%;
 }   
+
+@each $key, $viewport in $viewports {
+	@media all and (min-width: $viewport) {
+		@for $i from 1 through $grid-count {
+			.col-#{$key}-#{$i} {
+				width: 100% / $grid-count * $i;
+			}
+		}
+	}
+}
