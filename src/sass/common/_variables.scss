@@ -4,11 +4,12 @@ $base-line-height: 1.3;
  
 $red: #ff2d2d; 
 $black: #000; 
+$white: #d7d7e3;
 $gray: #626262;
 $gray-light: #ececec;  
 $grey-dark: #2d2d2d;
 $base-link-color: #e0e0e0;
-$base-link-hover-color: #red;
+$base-link-hover-color: red;
 $base-color: $gray;  
 
 
@@ -17,8 +18,8 @@ $grid-count: 12;
 
 $mobile-width: 320px;
 $tablet-width: 768px;
-$conteiner-width: 1170px; 
-$large-width: 1300px;
+$conteiner-width: 1000px; 
+$large-width: 1120px;
  
 
 $viewports: (  
